@@ -1,6 +1,6 @@
 {
   "name": "dsh-radio-dock",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "把 godot_citys 里的车载电台搬进 DSH 右侧栏：three.js 车内视角 + 会弯的夜路 + radio-browser 网络电台（City Pop）。",
   "type": "module",
   "main": "lib/index.js",
