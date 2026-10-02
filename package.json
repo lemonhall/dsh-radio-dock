@@ -1,0 +1,33 @@
+{
+  "name": "dsh-radio-dock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把 godot_citys 里的车载电台搬进 DSH 右侧栏：three.js 车内视角 + 无限公路 + 网络电台（radio-browser.info）。",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "meta": {
+    "title": "车载电台（City Pop）",
+    "description": "右侧栏一个 tab：three.js 的车内视角在夜路上一直开，电台从 radio-browser 取频道，可以开关、切台、存快捷槽。"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  },
+  "license": "MIT"
+}

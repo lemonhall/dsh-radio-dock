@@ -1,0 +1,33 @@
+# ============================================================================
+# dsh-radio-dock —— DSH bundle patch
+# ============================================================================
+# 移植自 E:\development\godot_citys 的车载电台（city_game/world/radio + ui）：
+#   - 音源来自 radio-browser.info 的公开目录（原项目 CityRadioBrowserApi.gd 用的就是它）
+#   - 原项目那套 C++ GDExtension/FFmpeg 后端在这里不需要：浏览器 <audio> 直接放流
+#   - 交互对齐原项目 project.godot 里的热键语义：
+#       vehicle_radio_power_toggle / next / prev / quick_open / browser_open / confirm / cancel
+#
+# 宿主半（lib/index.js）负责取目录与转发音频流（避免 CORS 与混合内容）；
+# 客户端半（lib/client.js）是右侧栏 tab：three.js 车内视角 + 电台 UI。
+#
+# 安装：
+#   plugin_manager install_bundle  target=link:E:\development\dsh-radio-dock
+# ⚠️ 客户端半边改动要重启应用。
+# ============================================================================
+
+- insert:
+    - id: dsh-radio-dock
+      name: dsh-radio-dock
+      config:
+        # 与原项目 CityRadioBrowserApi.gd 的 DEFAULT_BASE_URL 一致
+        apiBase: 'https://de1.api.radio-browser.info'
+        # 取目录走本机代理（原项目也有 PROXY_MODE_LOCAL + 7897）
+        proxy: 'http://127.0.0.1:7897'
+        # 默认往这个方向捞频道
+        defaultCountry: 'Japan'
+        defaultTag: 'city pop'
+        timeoutMs: 20000
+        # 目录缓存（原项目是 72 小时）
+        cacheTtlMs: 21600000
+        # 音频流转发的读超时
+        streamTimeoutMs: 60000
