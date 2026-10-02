@@ -6,6 +6,16 @@
 
 ## 效果
 
+![在 DSH 右侧栏里的车载电台](https://cdn.jsdelivr.net/gh/lemonhall/dsh-radio-dock@main/docs/screenshot-radio.png)
+
+左边聊天、右边电台。这张是展开频道列表的样子：上面是当前在放的那台，中间四个标签（City Pop / Jazz / Synthwave / Lofi），下面是 radio-browser 的实时结果。
+
+![整屏](https://cdn.jsdelivr.net/gh/lemonhall/dsh-radio-dock@main/docs/screenshot-full.png)
+
+![夜路上跑起来](https://cdn.jsdelivr.net/gh/lemonhall/dsh-radio-dock@main/docs/screenshot-road.png)
+
+（以上都是在 DSH 桌面版里真实截的，`docs/make-screenshots.py` 是裁图脚本。）
+
 - **车内视角**：驾驶位高度、仪表台与方向盘剪影；月光、星空、月亮（带光晕）
 - **会弯的公路**：路面按三个正弦叠加的曲线做顶点位移，96 段；相机横向跟曲线、朝向跟切线
 - **车流**：同向的慢车被我们一辆辆超过（红色尾灯），对向的迎面掠过（暖白大灯）；护栏柱、路灯、远处城市剪影循环
